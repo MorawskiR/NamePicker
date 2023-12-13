@@ -24,17 +24,16 @@
             #tail, #tail1{
                 cursor: pointer;
             }
-            #demo, #demo1 , #demo2, #demo3, #demo4, #demo5, #demo6, #demo7, #demo8, #demo9, #demo10, #demo11, #demo12, #demo13, #demo14, #demo15, #demo16, #demo17, #demo18, #demo19, #demo20, #demo21, #demo22, #demo23, #demo24, #demo25
+            #demo,#reset, #undo, #demo1 ,#demo2, #demo3, #demo4, #demo5, #demo6, #demo7, #demo8, #demo9, #demo10, #demo11, #demo12, #demo13, #demo14, #demo15, #demo16, #demo17, #demo18, #demo19, #demo20, #demo21, #demo22, #demo23, #demo24, #demo25
             {
                 border: 1px solid black; 
-                background-color: lightgreen; 
                 width: 100px;
-                 height: 30px;
-                 float:left;
-                 margin-right: 1%;
-                 margin-bottom: 1%;
-                 display: flex;
-                 align-items: center;
+                height: 30px;
+                float:left;
+                margin-right: 1%;
+                margin-bottom: 1%;
+                display: flex;
+                align-items: center;
                 text-align: center;
             }
             
@@ -49,21 +48,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <header>
-            <div class="container container-flex"> 
-                <div class="site-title">
-                                  
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html" class="current-page"> Home </a></li>
-                        <li><a href="blog.html" > Blog </a></li>
-                        <li><a href="projects.html"> Projects</a></li>                        
-                    </ul>
-                </nav>
-            </div>
-            
-        </header>
+
         <div class="container container-flex">
             <main role="main"> 
                 <ol>
@@ -83,7 +68,8 @@
                         Have fun 
                     </li>
                 </ol>
-     
+                <div id="reset" onlick = "reset(ne)" >Reset</div>
+                <div id="undo" >Undo</div>
 <br/>
                 <div id="wrapper">
 
@@ -92,14 +78,15 @@
                 <div id="demo" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" 
                     unselectable="on"
                     onselectstart="return false;" 
+                    onclick="sprawdz('demo')"
                     onmousedown="return false;">
                     Adam</div>
-                <div id="demo2">Adrian</div>
-                <div id="demo3">Alan</div>
-                <div id="demo4">Albert</div>
-                <div id="demo5">Alek</div>
-                <div id="demo6">Aleks</div>
-                <div id="demo7">Aleksander</div>
+                <div id="demo2" onclick="sprawdz('demo2')">Adrian</div>
+                <div id="demo3" onclick="sprawdz('demo3')">Alan</div>
+                <div id="demo4" onclick="sprawdz('demo4')">Albert</div>
+                <div id="demo5" onclick="sprawdz('demo5')">Alek</div>
+                <div id="demo6" onclick="sprawdz('demo6')">Aleks</div>
+                <!-- <div id="demo7">Aleksander</div>
                 <div id="demo8">Alfred</div>
                 <div id="demo9">Akradiusz</div>
                 <div id="demo10">Aleksy</div>
@@ -117,29 +104,20 @@
                 <div id="demo22">Aron</div>
                 <div id="demo23">Arsen</div>
                 <div id="demo24">Artur</div>
-                <div id="demo25">Aureliusz</div>
+                <div id="demo25">Aureliusz</div> -->
 
                 <script>
-               document.getElementById('demo').onclick = function changeContent()
+                var last;
+                function sprawdz(nr)
                 {
-                   var x = document.getElementById('demo').textContent;
-                   var y = document.getElementById('demo').style.backgroundColor;
-               if(y == "red")
-                    document.getElementById('demo').style.backgroundColor = "lightgreen";
-                else
-                    document.getElementById('demo').style.backgroundColor = "red";
-                //    if(x =="Rafal")
-                //    {
-                //        document.getElementById('demo').textContent = "-----";
-                //        document.getElementById('demo').style.backgroundColor = "red";
-                //    }
-                //    if(x== "-----"){
-                //        document.getElementById('demo').textContent = "Rafal";
-                //        document.getElementById('demo').style.backgroundColor = "green";
-               
-                //    }
-               }
-              
+                    document.getElementById(nr).style.background = "red";
+                    last = nr;
+                    
+                }
+                function reset(ne)
+                {
+                    document.getElementById(nr).style.background = black;
+                }
                 </script>
                
             </div>
@@ -147,9 +125,6 @@
             <!-- sidebar nagłowki -->
           
          </div>
-        <footer>
-            <p><strong> Close strong</strong> </p>
-            <p> Stay home </p>
-        </footer>
+  
     </body>
 </html>
