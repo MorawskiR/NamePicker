@@ -68,7 +68,7 @@
                         Have fun 
                     </li>
                 </ol>
-                <div id="reset" onlick = "reset(ne)" >Reset</div>
+                <div id="reset" onlick = "reset()" >Reset</div>
                 <div id="undo" >Undo</div>
 <br/>
                 <div id="wrapper">
@@ -114,9 +114,10 @@
                     last = nr;
                     
                 }
-                function reset(ne)
+                function reset()
                 {
-                    document.getElementById(nr).style.background = black;
+                    location.reload();
+
                 }
                 </script>
                
